@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Check out project
         uses: actions/checkout@v3
@@ -25,5 +25,6 @@ jobs:
 
       - name: Execute all tests
         run: npm test
-        env: 
+        env:
+          APPLITOOLS_SERVER_URL: 'https://opendooreyesapi.applitools.com'
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
